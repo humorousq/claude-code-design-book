@@ -1,0 +1,21 @@
+{
+  "name": "claude-code-design-book",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Claude Code 设计思想与核心架构 - 深入理解 AI 辅助开发工具的设计哲学与实现原理",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "generate:pdf": "node scripts/generate-pdf.mjs",
+    "deploy": "gh-pages -d docs/.vitepress/dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vitepress": "^1.5.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

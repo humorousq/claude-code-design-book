@@ -1,0 +1,141 @@
+import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
+
+// https://vitepress.dev/reference/site-config
+export default withMermaid(
+  defineConfig({
+    title: "Claude Code 设计思想与核心架构",
+    description: "深入理解 AI 辅助开发工具的设计哲学与实现原理",
+    lang: 'zh-CN',
+
+    // 如果部署到 https://username.github.io/claude-code-design-book/
+    // 请取消注释以下配置
+    // base: '/claude-code-design-book/',
+
+    head: [
+      ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+      ['meta', { name: 'og:type', content: 'book' }],
+    ],
+
+    themeConfig: {
+      // https://vitepress.dev/reference/default-theme-config
+      logo: '/logo.svg',
+
+      nav: [
+        { text: '首页', link: '/' },
+        { text: '第一部分', link: '/chapter-01-design-philosophy' },
+        { text: '关于', link: '/about' }
+      ],
+
+      sidebar: [
+        {
+          text: '📖 序言',
+          items: [
+            { text: '序言：AI 辅助开发的新纪元', link: '/preface' }
+          ]
+        },
+        {
+          text: '第一部分：核心设计哲学',
+          collapsed: false,
+          items: [
+            { text: '第1章：设计理念的起源', link: '/chapter-01-design-philosophy' },
+            { text: '第2章：系统架构概览', link: '/chapter-02-architecture-overview' }
+          ]
+        },
+        {
+          text: '第二部分：工具系统的设计',
+          collapsed: false,
+          items: [
+            { text: '第3章：工具系统的核心抽象', link: '/chapter-03-tool-system' },
+            { text: '第4章：文件操作工具的设计考量', link: '/chapter-04-file-tools' }
+          ]
+        },
+        {
+          text: '第三部分：Agent 系统与协作',
+          collapsed: false,
+          items: [
+            { text: '第5章：Agent 系统的设计', link: '/chapter-05-agent-system' },
+            { text: '第6章：多 Agent 协作模式', link: '/chapter-06-multi-agent-collaboration' }
+          ]
+        },
+        {
+          text: '第四部分：Memory 系统的设计',
+          collapsed: false,
+          items: [
+            { text: '第7章：Memory 系统的哲学', link: '/chapter-07-memory-philosophy' },
+            { text: '第8章：Memory 系统的实现', link: '/chapter-08-memory-implementation' }
+          ]
+        },
+        {
+          text: '第五部分：提示词工程',
+          collapsed: false,
+          items: [
+            { text: '第9章：系统提示词的设计', link: '/chapter-09-system-prompts' },
+            { text: '第10章：上下文管理', link: '/chapter-10-context-management' }
+          ]
+        },
+        {
+          text: '第六部分：高级特性',
+          collapsed: false,
+          items: [
+            { text: '第11章：MCP 协议集成', link: '/chapter-11-mcp-integration' },
+            { text: '第12章：插件与扩展系统', link: '/chapter-12-plugin-system' }
+          ]
+        },
+        {
+          text: '第七部分：安全与性能',
+          collapsed: false,
+          items: [
+            { text: '第13章：权限系统设计', link: '/chapter-13-permission-system' },
+            { text: '第14章：性能优化策略', link: '/chapter-14-performance-optimization' }
+          ]
+        },
+        {
+          text: '📚 附录',
+          collapsed: false,
+          items: [
+            { text: '附录A：命令参考', link: '/appendix-a-commands' },
+            { text: '附录B：工具参考', link: '/appendix-b-tools' },
+            { text: '附录C：Memory 最佳实践', link: '/appendix-c-memory-best-practices' },
+            { text: '附录D：故障排查', link: '/appendix-d-troubleshooting' },
+            { text: '附录E：术语表', link: '/appendix-e-glossary' }
+          ]
+        }
+      ],
+
+      socialLinks: [
+        { icon: 'github', link: 'https://github.com/your-username/claude-code-design-book' }
+      ],
+
+      footer: {
+        message: '基于 CC BY 4.0 许可发布',
+        copyright: 'Copyright 2026 作者'
+      },
+
+      search: {
+        provider: 'local'
+      },
+
+      outline: {
+        level: [2, 3]
+      },
+
+      docFooter: {
+        prev: '上一页',
+        next: '下一页'
+      },
+
+      lastUpdated: {
+        text: '最后更新于',
+        formatOptions: {
+          dateStyle: 'short',
+          timeStyle: 'short'
+        }
+      }
+    },
+
+    markdown: {
+      lineNumbers: true
+    }
+  })
+)
